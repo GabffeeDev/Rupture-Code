@@ -99,7 +99,7 @@ label .eve_appears:
     mc "Sabes..."
     mc "Algo dentro de mi esperaba que realmente fueras más que simple código."
     mc "Así que, estoy decepcionado."
-    # Sprite Eve Uncomfortable Worried
+    # Sprite Eve Uncomfortable open mouth
     e "¿Qué es lo que te molesta de estar solo?"
     "..."
     # Sprite Eve Sad
