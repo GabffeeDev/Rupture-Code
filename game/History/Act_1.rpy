@@ -13,13 +13,27 @@ label .eve_appears:
     "..."
     # BG habitación de Michael con fade que de impresión de que abre los ojos.
     "Despierto,  y me encuentro con la repetida necesidad de seguir durmiendo."
-    "Quiero evitarme una vez más."
-    "Por alguna razón el sueño ha sido una forma recurrente de lidiar con mi ansiedad."
+    "Quiero evitarme."
+    "No creo que la palabra correcta es..."
+    "No quiero levantarme hoy."
+    "Por alguna razón el sueño ha sido una forma recurrente de lidiar con lo que sea que ronde en mi cabeza."
     "Aun tengo sueño..."
     "Despertar se siente como una puñalada en el estómago."
-    "Prendo mi computadora, espero un instante y ejecuto un pequeño asistente de programa."
+    "¿Podría dormir infinitamente?"
+    "Si, hay una forma..."
+    "Pero no es algo que me mate la cabeza."
+    "Tampoco me considero un suicida."
+    "Tal vez ver algo en mi computador disipe por un instante el colapso."
+    "Voy a ello."
+    "Prendo la pc, espero un instante y ejecuto un pequeño asistente de programa."
     # BG computadora
-    # Preguntar el nombre al usuario
+    "Estos días han sido duros."
+    with Pause(0.5)
+    "Muy duros."
+    "Me siento profundamente solo."
+    "Es decir, estoy rodeado de personas, pero sabes a lo que me refiero ¿no?"
+    "..."
+    "¿Cómo me llamaré aquí?"
     
     $ player = renpy.input("¿Cuál es tu nombre?: ").strip().capitalize()
     
@@ -28,113 +42,237 @@ label .eve_appears:
     
     
     "Programa" "Hola [player]..."
-    # 
-    # Sprite Eve Laugh con Fade
-    e "Soy eve, tu compañera del sistema operativo."
+    
+    show eve laugh
+    with fade 
+    
+    e "Soy eve, tu compañera a la orden."
     e "¿Qué necesitas?"
+    show eve smile
     menu:
 
-        "Ayúdame a afrontar la soledad.":
-
+        "Soledad":
+            show eve uncomfortable_mouth
+            e "Si... la soledad puede ser dura."
+            e "La gente suele aislarse."
+            e "Además es un síntoma común entre personas que padecen depresión."
+            show eve uncomfortable
+            "Para nada soy alguien depresivo."
             "..."
-            e "Lo siento no tengo información sobre ello."
-            mc "Si ya lo se..."
+            "Pero vuelvo al instante que escucho sus preguntas."
+            show eve uncomfortable_mouth
+            e "¿Tienes algún familiar que este solo?, ¿Por qué la pregunta?"
+            show eve uncomfortable
+            mc "Yo estoy solo."
+            show eve surprise_mouth
+            e "...Eh-"
+            with Pause(0.5) 
+            show eve uncomfortable_mouth
+            e "¿En que puedo ayudarte entonces?"
+            mc "Nada que tu puedas hacer."
+            mc "Si me hablas me basta y sobra."
+            show eve sad
+            scene black
+            with fade
+            
+            "¿Qué estoy haciendo?"
+            # Parpadeo rápido
 
-        "Mencionar que no has comido bien.":
-
-            e "Eso es malo."
-            e "¿Gustas que organize algunas recetas para ti?."
-            mc "No."
-            mc "No te preocupes, da igual."
-            mc "No tengo hambre de todas formas."
-    # Sprite Eve Uncomfortable
+        "No tengo hambre":
+            show eve laugh
+            e "Puedo enviarte una lista de recetas rápidas y ricas."
+            e "¿Quieres eso?"
+            show eve neutral
+            mc "La verdad no."
+            mc "Olvídalo."
+            
+    show eve uncomfortable
     "..."
-    # Sprite Eve Uncomfortable opened mouth
+    show eve uncomfortable_mouth
     e "Bueno..."
     e "Podemos hablar de otra cosa si quieres."
     e "Soy un modelo inteligente preparado para acoplarme a tus necesidades."
-    # Sprite Eve Uncomfortable
+    show eve uncomfortable
     "No se que decir."
     "¿Un programa especializado en organizar tu ordenador?"
     "¿Una IA compañera?"
-    "Paso solo la mayoría del tiempo, tener alguien con quien charlar es reconfortante."
+    "Esto es degradante."
     mc "..."
-    # Sprite Eve Surprise
+    show eve surprise_mouth
     e "¿Estas ahí?"
-    # Sprite Eve Surprise Closed mouth
-    "Regreso al presente la escuchar su voz."
+    show eve surprise
+    "Me pierdo un instante."
+    "Después reacciono."
     mc "Si perdón."
-    # hide Eve
-    # scene black
-    # with fade
+    hide Eve
+    scene black
+    with fade
     "Ella no se ha ido."
     "Se queda a mi lado."
-    "¿No se aburre verdad?"
+    "¿Por qué no se ha ido?"
     "Que estoy diciendo."
     "Ella no existe."
-    "Es puro código."
     "Esta programada precisamente para hablar con muchas personas."
-    "Y no para pensar si soy aburrido o no."
+    "Le da igual si soy o no soy interesante."
+    show eve neutral
+    with fade
     mc "¿Alguna vez te has cuestionado tu propia existencia como programa autónomo?"
     # BG computador
-    # Sprite Eve Neutral
-    # with fade
-    # 
+    show eve shy
     "..."
     "Ella observa tras la pantalla."
-    "Sus funciones inspeccionan mi forma de hablar."
-    "Pero no retornan ningún valor que le sea util."
-    # Sprite Eve sad smile
+    "Me inspecciona con cuidado."
+    show eve sad_smile
     "Decide apartar su mirada confusa."
     "No confirma nada."
     "Tampoco lo desmiente."
     "Espera un rato antes de responder..."
-    # Sprite Eve Uncomfortable opened mouth
+    show eve uncomfortable_mouth
     e "No tengo conciencia."
     e "Soy un programa en tu computador."
     e "Así que..."
-    e "Saca tus propias conclusiones mi querido [player]"
-    # Sprite Eve Uncomfortable
+    e "Saca tus propias conclusiones mi querido [player]."
+    show eve uncomfortable
     mc "Esta bien lo entiendo..."
     mc "Sabes..."
     mc "Algo dentro de mi esperaba que realmente fueras más que simple código."
     mc "Así que, estoy decepcionado."
-    # Sprite Eve Uncomfortable open mouth
+    show eve sad_mouth
     e "¿Qué es lo que te molesta de estar solo?"
+    show eve sad
+    with Pause(0.5) 
     "..."
-    # Sprite Eve Sad
     "Son muchas cosas realmente."
     "Pero no sé por donde empezar."
-    
-    jump .player_past
+    "Tal vez debería refrescar mi memoria."
+    call .player_past
+
+    jump Act_2
 
 label .player_past:
 
-    scene black
-    with fade
+    $ amor_visto = False
+    $ soledad_vista = False
+    $ suicidio_visto = False
 
-    menu:
+    jump .menu_past
 
-        "¿Qué quieres contar?"
+    label .menu_past:
 
-        "Falta de conexión":
-            # Sprite Eve Uncomfortable Worried
-            mc "No me siento bien."
-            mc "Es tan simple como eso."
-            mc "No tengo un proposito claro."
-            mc "Y eso me desorienta."
+        scene black
+        with fade
+        menu:
 
+            "Amor" if not amor_visto:
+                $ amor_visto = True
+                mc "¿Podrías simular ser mi novia?"
+                show eve shy
+                "He caído lo más bajo posible."
+                show eve laugh
+                e "¡Claro que puedo!"
+                e "Empezamos cuando quieras."
+                e "¡Sera divertido!"
+                show eve neutral
+                "Esto me da tanta pena."
+                "Pero hey..."
+                "¿Qué más da?"
+                "Quiero divertirme un rato."
+                mc "Empieza ahora, sin rodeos."
+                show eve surprise_mouth
+                e "¿Eso es realmente lo que quieres?"
+                show eve surprise
+                mc "¿No acabas de decir que sí?"
+                show eve uncomfortable_mouth
+                e "Sí."
+                e "Pero antes tengo curiosidad."
+                e "¿Por qué quieres una novia?"
+                show eve surprise
+                "La pregunta me toma por sorpresa."
+                mc "Porque estoy solo."
+                show eve uncomfortable_mouth
+                e "Eso no responde mi pregunta."
+                "..."
+                e "Una novia no es una medicina."
+                e "Tampoco una cura para la tristeza."
+                mc "¿Y tú qué sabes?"
+                show eve sad_mouth
+                e "Nada."
+                e "Solo sé lo que me dices."
+                show eve sad
+                mc "Entonces deja de analizarme y actúa."
+                show eve sad_mouth
+                e "Está bien."
+                show eve laugh
+                e "Hola cariño."
+                e "¿Cómo estuvo tu día?"
+                show eve smile
+                "..."
+                "Es extraño."
+                scene black
+                with fade
+                "Escuchar eso debería hacerme sentir mejor."
+                "Pero no lo hace."
+                "Porque sé que no lo siente."
+                "Porque sé que ella no existe."
+                "Porque sé que yo lo sé."
+                show eve sad
+                with fade
+                mc "Fue horrible."
+                show eve sad_mouth
+                e "Lo siento."
+                show eve sad
+                "Incluso sabiendo que es una respuesta generada..."
+                "por alguna razón me quedo mirando la pantalla."
+                "Esperando algo más."
+                "Esperando que diga algo real."
+                "Pero nada ocurre."
+                show eve uncomfortable_mouth
+                e "Sabes..."
+                e "A mi no me disgusto tanto como crees."
+                show eve sad
+                mc "Pero tu no sientes nada."
+                mc "¿O caso lo haces?"
+                show eve surprise
+                "Ella me mira, me analiza con cuidado al escucharme."
+                show eve uncomfortable_mouth
+                e "Por supuesto que no."
+                e "Solo soy un conjunto de ideas de otros usuarios."
+                show eve shy
+                "Me lo suponía."
+                "De todas formas por que esa reacción tan rara..."
 
-        "Soledad":
-            # Sprite Eve Sad
-            mc "NO QUIERO ESTAR SOLO."
-            mc "¿Es tan difícil tener alguien con quíen hablar?"
-            # Sprite Eve Cry
-            mc "..."
-            "Ella parece no entender lo que digo."
-            $ corruption_path = True
+                jump .menu_past
 
-        "No mencionar nada":
-            pass
+            "Soledad" if not soledad_vista:
+                $ soledad_vista = True
+                show eve sad
+                mc "Sabes... no lo sé."
+                mc "A pesar de estar rodeado de personas."
+                mc "Me siento solo."
+                mc "..."
+                show eve sad_mouth
+                e "Entiendo..."
+                e "Pero lastimosamente no puedo ayudarte en eso."
+                show eve sad
+                e "..."
+                show eve sad_mouth
+                e "Mejor dicho, no se como hacerlo."
+                e "Lo siento mucho."
+                show eve sad
+                "Me lo esperaba."
+                mc "No te preocupes..."
 
-    jump Act_2
+                jump .menu_past
+
+            "Suicidio"if not suicidio_visto:
+                $ suicidio_visto = True
+                scene black
+                with fade
+                "NO."
+                "Simplemente no."
+
+                jump .menu_past
+
+            "Continuar" if amor_visto and soledad_vista and suicidio_visto:
+                jump Act_2            
+
