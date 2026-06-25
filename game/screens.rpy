@@ -138,11 +138,11 @@ style window:
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos 300
+    xpos 350
     xalign 0.5
     yalign 0.5
-    xsize 200
-    ypos 0.100
+    xsize 400
+    ypos -0.100
     ysize 60
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)

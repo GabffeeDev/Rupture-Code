@@ -26,7 +26,7 @@ define config.check_conflicting_properties = True
 ## Los colores del texto de la interfaz
 
 ## El color enfatizado usado en la interfaz para subrayar texto.
-define gui.accent_color = '#66cc00'
+define gui.accent_color = '#d60e00ff'
 
 ## El color del botón de texto cuando no está seleccionado ni enfocado.
 define gui.idle_color = '#888888'
@@ -35,7 +35,7 @@ define gui.idle_color = '#888888'
 define gui.idle_small_color = '#aaaaaa'
 
 ## El color usado en botones y barras que ganan foco.
-define gui.hover_color = '#a3e066'
+define gui.hover_color = '#e0a366'
 
 ## El color del botón de texto seleccionado pero no enfocado. Un botón está
 ## seleccionado si indica el valor actual de la pantalla o preferencia.
@@ -46,24 +46,25 @@ define gui.insensitive_color = '#8888887f'
 
 ## Colores de la parte vacía de las barras. No se usan directamente, sino en la
 ## regeneración de las imágenes de barra.
-define gui.muted_color = '#285100'
-define gui.hover_muted_color = '#3d7a00'
+define gui.muted_color = '#512800'
+define gui.hover_muted_color = '#7a3d00'
 
 ## Colores del texto del diálogo y menú.
-define gui.text_color = '#ffffff'
+define gui.text_color = "#ffffff"
+define gui.text_outlines = [(4, "#000000", 0, 0)]
 define gui.interface_text_color = '#ffffff'
 
 
 ## Tipos y tamaños de letra ####################################################
 
 ## El tipo de letra del texto del juego
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "CascadiaCode-VariableFont_wght.ttf"
 
 ## El tipo de letra de los nombres de personajes
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "CascadiaCode-VariableFont_wght.ttf"
 
 ## El tipo de letra del texto externo al juego.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "CascadiaCode-VariableFont_wght.ttf"
 
 ## El tamaño normal del texto del diálogo.
 define gui.text_size = 33

@@ -1,3 +1,7 @@
+# BG
+image bg room = "images/bg/room_png.jpg"
+image bg pc = "images/bg/Pc.jpg"
+
 
 # Sprites 
 
@@ -15,3 +19,4 @@ image eve surprise = "images/sprites/Eve/Eve_Surprise_closed.png"
 image eve surprise_mouth = "images/sprites/Eve/Eve_Surprise.png"
 image eve cry = "images/sprites/Eve/Eve_Cry.png"
 image eve smile = "images/sprites/Eve/Eve_Smile.png"
+

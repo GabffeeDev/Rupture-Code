@@ -11,6 +11,8 @@ label .eve_appears:
     "..."
     "..."
     "..."
+    scene bg room 
+    with fade
     # BG habitación de Michael con fade que de impresión de que abre los ojos.
     "Despierto,  y me encuentro con la repetida necesidad de seguir durmiendo."
     "Quiero evitarme."
@@ -26,6 +28,8 @@ label .eve_appears:
     "Tal vez ver algo en mi computador disipe por un instante el colapso."
     "Voy a ello."
     "Prendo la pc, espero un instante y ejecuto un pequeño asistente de programa."
+    scene bg pc
+    with dissolve
     # BG computadora
     "Estos días han sido duros."
     with Pause(0.5)
