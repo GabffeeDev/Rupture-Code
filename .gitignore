@@ -12,6 +12,7 @@
 /game/**/*.bak
 /game/**/*.new
 /game/**/*.old
+/game/**/*.psd
 
 # Error, log, and output files.
 /errors.txt

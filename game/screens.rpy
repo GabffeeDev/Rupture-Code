@@ -138,7 +138,7 @@ style window:
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos 350
+    xpos 550
     xalign 0.5
     yalign 0.5
     xsize 400
