@@ -356,7 +356,7 @@ screen main_menu():
     ## Esto asegura que cualquier otra pantalla de menu es remplazada.
     tag menu
 
-    add gui.main_menu_background
+    add gui.main_menu_background at zoom
 
     ## Este marco vacío oscurece el menu principal.
     frame:
@@ -421,9 +421,9 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     style_prefix "game_menu"
 
     if main_menu:
-        add gui.main_menu_background
+        add gui.main_menu_background at zoom
     else:
-        add gui.game_menu_background
+        add gui.game_menu_background at zoom
 
     frame:
         style "game_menu_outer_frame"
