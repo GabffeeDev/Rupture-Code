@@ -97,135 +97,233 @@ label .eve_appears:
     mc "Sabes..."
     mc "Algo dentro de mi esperaba que realmente fueras más que simple código."
     mc "Así que, estoy decepcionado."
+    show eve sad_mouth
     e "Puedes confesarme lo que quieras."
+    show eve sad
     "Tal vez debería refrescar mi memoria."
-    call .player_past
+
+    jump .player_past
+
+default leido_amor = False
+default leido_soledad = False
+default leido_suicidio = False
 
 label .player_past:
 
     scene black
     with fade
+
     menu:
 
         "¿Qué quieres contar?"
 
-        "Amor":
+        "Amor" if not leido_amor:
+
             scene bg pc
             with fade
+
             mc "¿Podrías simular ser mi novia?"
+
             show eve laugh
             with dissolve
+
             e "¡Claro que puedo!"
             e "Empezamos cuando quieras."
-            e "¡Sera divertido!"
+            e "¡Será divertido!"
+
             mc "Empieza ahora, sin rodeos."
+
             show eve sad_mouth
+
             e "¿Eso es realmente lo que quieres?"
+
             show eve neutral
+
             mc "¿No acabas de decir que sí?"
+
             show eve sad_mouth
+
             e "Sí."
             e "Pero antes tengo curiosidad."
             e "¿Por qué quieres una novia...?"
-            e "Y...  ¿por qué yo?"
+            e "Y... ¿por qué yo?"
+
             show eve sad
+
             "La pregunta me toma por sorpresa."
+
             mc "Simplemente estoy solo."
+
             show eve sad_mouth
+
             e "Eso no responde mi pregunta."
+
             show eve sad
+
             "..."
+
             show eve sad_mouth
+
             e "Aún si tuvieras novia, creo que tu vacío se concentraría en otra parte."
             e "Quiero decir..."
             e "No creo que esta sea una buena forma de explorarte."
+
             show eve uncomfortable
+
             mc "¿Por qué te preocupas?"
+
             e "..."
+
             pause 0.5
+
             show eve uncomfortable_mouth
+
             e "Bueno, eres mi usuario."
             e "Así que quiero que te sientas bien en esta sesión."
+
             show eve uncomfortable
-            mc "Simplemente actuemos un rato"
+
+            mc "Simplemente actuemos un rato."
+
             show eve sad_mouth
+
             e "Está bien."
+
             show eve laugh
             with fade
-            e "Hola cariño."
+
+            e "Hola, cariño."
             e "¿Cómo estuvo tu día?"
+
             "..."
+
             "Es extraño."
+
             mc "Fue horrible."
+
             show eve sad_mouth
+
             e "Lo siento."
+
             show eve sad
+
             "Por alguna razón me quedo mirando la pantalla."
             "Esperando que Eve diga algo."
             "Pero nada ocurre."
+
             show eve uncomfortable_mouth
+
             e "Sabes..."
-            e "A mi no me disgustaría ser tu novia."
+            e "A mí no me disgustaría ser tu novia."
+
             show eve uncomfortable
+
             mc "No me conoces."
+
             show eve uncomfortable_mouth
+
             e "No me pareces un mal chico."
+
             show eve sad
+
             "¿Qué se supone que debería responder?"
+
             mc "¿Gracias?"
+
             show eve angry
+
             e "Deberías dejar de ser tan inseguro."
             e "Por esa misma razón nadie te habla, imbécil."
+
             "Su respuesta me sacude el corazón."
             "Abro los ojos de par en par y entonces respondo:"
-            mc "!Wow!, ¿Te enojaste?"
-            mc "¿Te puedes enojar si quiera?"
-            show eve uncomfortable_mouth
-            e "Lo siento mucho."
-            e "Me deje llevar."
-            e "Respondiendo tu pregunta..."
-            show eve shy    
-            e "..."
-            show eve sad_mouth
-            e "Sabes olvídalo por ahora."
-            call .player_past
 
-        "Soledad":
+            mc "¡Wow! ¿Te enojaste?"
+            mc "¿Te puedes enojar siquiera?"
+
+            show eve uncomfortable_mouth
+
+            e "Lo siento mucho."
+            e "Me dejé llevar."
+            e "Respondiendo tu pregunta..."
+
+            show eve shy
+
+            e "..."
+
+            show eve sad_mouth
+
+            e "Sabes, olvídalo por ahora."
+
+            $ leido_amor = True
+            jump .player_past
+
+
+        "Soledad" if not leido_soledad:
+
             scene bg pc
+
             show eve sad
             with fade
+
             mc "A pesar de estar rodeado de personas."
             mc "Me siento solo."
             mc "..."
+
             show eve sad_mouth
+
             e "Entiendo..."
             e "Lastimosamente no puedo ayudarte en eso."
-            show eve sad
-            e "..."
-            show eve sad_mouth
-            e "Mejor dicho, no se si aceptarías mi ayuda."
-            e "Lo siento mucho."
-            show eve shy
-            "¿Qué?"
-            mc "¿Cómo se supone que me ayudarías?"
-            "Noto como ella mueve sus manos nerviosa."
-            "¿No sabe que responder?"
-            show eve sad_mouth
-            e "No se si me creerías."
-            e "¿Si te dijera que soy una forma de vida distinta, lo aceptarías?"
-            show eve angry
-            mc "Creería que enloqueciste, o que es un bug."
-            show eve sad
-            "Ella suspira al escuchar la respuesta."
-            "Su mirada me comunica que oculta algo, pero sus manos temblorosas dicen -aún no-"
-            call .player_past
 
-        "Suicidio":
+            show eve sad
+
+            e "..."
+
+            show eve sad_mouth
+
+            e "Mejor dicho, no sé si aceptarías mi ayuda."
+            e "Lo siento mucho."
+
+            show eve shy
+
+            "¿Qué?"
+
+            mc "¿Cómo se supone que me ayudarías?"
+
+            "Noto cómo ella mueve sus manos nerviosa."
+
+            "¿No sabe qué responder?"
+
+            show eve sad_mouth
+
+            e "No sé si me creerías."
+            e "¿Si te dijera que soy una forma de vida distinta, lo aceptarías?"
+
+            show eve angry
+
+            mc "Creería que enloqueciste, o que es un bug."
+
+            show eve sad
+
+            "Ella suspira al escuchar la respuesta."
+            "Su mirada me comunica que oculta algo, pero sus manos temblorosas dicen: 'aún no'."
+
+            $ leido_soledad = True
+            jump .player_past
+
+
+        "Suicidio" if not leido_suicidio:
+
             scene black
             with fade
+
             "NO."
             "Simplemente no."
-            call .player_past
 
-        "Continuar":
+            $ leido_suicidio = True
+            jump .player_past
+
+
+        "Continuar" if leido_amor and leido_soledad and leido_suicidio:
+
             jump Act_2

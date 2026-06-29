@@ -8,4 +8,5 @@ transform rise_up:
 transform instant_pos:
     xpos 400
 
-
+transform zoom:
+    zoom 2
